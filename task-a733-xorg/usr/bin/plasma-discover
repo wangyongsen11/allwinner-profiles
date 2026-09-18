@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Trixie's kdeglobals intentionally does not force a Qt Quick backend. Keep
+# this workaround local to Discover so the rest of Plasma can use BXM Vulkan.
+unset QSG_RHI_BACKEND
+export QT_QUICK_BACKEND="${QT_QUICK_BACKEND:-software}"
+export QSG_RENDER_LOOP="${QSG_RENDER_LOOP:-basic}"
+export QT_XCB_NO_MITSHM="${QT_XCB_NO_MITSHM:-1}"
+
+exec /usr/bin/plasma-discover.bak "$@"
