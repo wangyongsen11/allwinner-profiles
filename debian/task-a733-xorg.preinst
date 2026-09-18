@@ -7,6 +7,7 @@ install | upgrade)
 	# workaround command-with-path-in-maintainer-script for /usr/bin
 	conflicts="
 /usr/lib/xorg/modules/libglamoregl.so /usr/bin/sddm-greeter-qt6
+/usr/bin/plasma-discover
 /usr/lib/xorg/modules/drivers/modesetting_drv.so /usr/bin/Xorg
 /usr/share/wayland-sessions/plasma.desktop
 "

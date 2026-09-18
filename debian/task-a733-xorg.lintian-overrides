@@ -2,5 +2,9 @@
 task-a733-xorg: package-modifies-ld.so-search-path
 task-a733-xorg: package-has-unnecessary-activation-of-ldconfig-trigger
 
-# sddm-greeter-qt6 is just a hack
+# sddm-greeter-qt6 and plasma-discover are wrapper scripts.
 task-a733-xorg: no-manual-page
+
+# False positive: the maintainer scripts pass absolute paths to dpkg-divert;
+# they do not execute those paths as commands.
+task-a733-xorg: command-with-path-in-maintainer-script
